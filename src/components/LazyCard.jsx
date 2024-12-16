@@ -21,6 +21,8 @@ export default function LazyCard({ title }) {
     })
 
     io.observe(cardRef.current)
+
+    return () => io.disconnect()
   }, [])
   return (
     <div className="w-full h-[300px] bg-slate-800 flex items-center justify-center border" ref={cardRef}>
